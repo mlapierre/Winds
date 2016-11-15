@@ -63,6 +63,7 @@ class Subscription extends Component {
                                     }
                                 </li>
                             </ul>
+                            <div className="summary">{this.props.object.description}</div>
                         </div>
                     </div>
                 </li>
