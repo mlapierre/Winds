@@ -7,55 +7,14 @@ var Sails      = require('sails').Sails,
     async      = require('async');
 
 var initialData = {
-    'Design': [
-        {'name': 'Designer News', 'rss': 'https://www.designernews.co/?format=rss'},
-        {'name': 'Dribbble', 'rss': 'https://dribbble.com/shots/popular.rss'},
-        {'name': 'A List Apart', 'rss': 'http://alistapart.com/main/feed'},
-        {'name': 'Smashing Magazine', 'rss': 'https://www.smashingmagazine.com/feed/'},
-        {'name': 'Invision', 'rss': 'http://blog.invisionapp.com/feed/'}
-    ],
-    'Startups': [
-        {'name': 'On Startups', 'rss': 'http://onstartups.com/rss.xml'},
-        {'name': 'Techcrunch', 'rss': 'https://techcrunch.com/feed/'},
-        {'name': 'Mashable', 'rss': 'http://feeds.mashable.com/Mashable', 'url': 'http://mashable.com/'}
-    ],
     'Programming': [
-        {'name': 'Hacker News', 'rss': 'https://news.ycombinator.com/rss'},
-        {'name': 'Lobsters', 'rss': 'https://lobste.rs/rss'},
-        {'name': 'Sentry', 'rss': 'https://blog.sentry.io/feed.xml'},
-        {'name': 'Stream', 'rss': 'http://blog.getstream.io/feed/'}
+        {'name': 'Hacker News', 'rss': 'https://news.ycombinator.com/rss', 'url': 'https://news.ycombinator.com/'}
     ],
-    'Gaming': [
-        {'name': 'IGN', 'rss': 'http://feeds.ign.com/ign/all', 'url': 'http://ign.com/'},
-        {'name': 'Gamespot', 'rss': 'http://www.gamespot.com/feeds/reviews/'},
-        {'name': 'Kotaku', 'rss': 'http://feeds.gawker.com/kotaku/full', 'url': 'http://kotaku.com/'}
-    ],
-    'LifeHacks': [
-        {'name': 'Life Hacker', 'rss': 'http://feeds.gawker.com/lifehacker/full', 'url': 'http://lifehacker.com/'},
-        {'name': 'Ted Talks', 'rss': 'https://www.ted.com/talks/rss'}
-    ],
-    'Venture Capital': [
-        {'name': 'Mattermark Daily', 'rss': 'https://mattermark.com/category/mattermark-daily/feed/'},
-        {'name': 'Brad Feld', 'rss': 'http://feeds.feedburner.com/FeldThoughts', 'url': 'http://www.feld.com/'},
-        {'name': 'AVC', 'rss': 'http://feeds.feedburner.com/avc', 'url': 'http://avc.com/'},
-        {'name': 'YCBlog', 'rss': 'https://blog.ycombinator.com/posts.atom'},
-        {'name': 'Alex Iskold', 'rss': 'https://alexiskold.net/feed/'},
-        {'name': 'David Cohen', 'rss': 'http://feeds.feedburner.com/DavidGCohen', 'url': 'http://davidgcohen.com/'},
-        {'name': 'VC Adventure', 'rss': 'http://feeds.feedburner.com/VC_Adventure', 'url': 'http://www.sethlevine.com/'}
-    ],
-    'AI & Machine Learning': [
-        {'name': 'R Bloggers', 'rss': 'https://www.r-bloggers.com/feed/'},
-        {'name': 'KD Nuggets', 'rss': 'http://www.kdnuggets.com/feed'},
-        {'name': 'Kaggle', 'rss': 'http://blog.kaggle.com/feed/'}
+    'Technology': [
+        {'name': 'Ars Technica', 'rss': 'https://www.r-bloggers.com/feed/', 'url': 'http://arstechnica.com/'}
     ],
     'News': [
-        {'name': 'CNN', 'rss': 'http://rss.cnn.com/rss/cnn_topstories.rss', 'url': 'http://cnn.com'},
-        {'name': 'New York Times', 'rss': 'http://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml', 'url': 'http://nytimes.com'},
-        {'name': 'BBC', 'rss': 'http://feeds.bbci.co.uk/news/rss.xml?edition=us', 'url': 'http://www.bbc.com'}
-    ],
-    'VR': [
-        {'name': 'Upload VR', 'rss': 'http://uploadvr.com/feed/'},
-        {'name': 'HTC Vive', 'rss': 'http://blog.vive.com/us/feed/'}
+        {'name': 'The Conversation', 'rss': 'https://theconversation.com/articles.atom', 'url': 'https://theconversation.com/'}
     ]
 }
 
