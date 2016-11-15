@@ -78,10 +78,10 @@ module.exports.connections = {
 
 };
 
-if (process.env.MONGO_URI) {
+if (process.env.MONGO_URL) {
     // overwrite the config
     module.exports.connections.mongo = {
           adapter: 'sails-mongo',
-          url: process.env.MONGO_URI
+          url: process.env.MONGO_URL
         }
 }
