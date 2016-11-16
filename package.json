@@ -33,6 +33,7 @@
     "getstream": "^3.5.0",
     "getstream-node": "git://github.com/getstream/stream-node.git#waterline",
     "html-entities": "^1.2.0",
+    "html-to-react": "^1.2.2",
     "htmlparser2": "^3.9.2",
     "iconv-lite": "^0.4.15",
     "include-all": "~2.0.0",

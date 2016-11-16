@@ -5,6 +5,7 @@ import moment from 'moment'
 import normalizeUrl from 'normalize-url'
 
 import StripEntities from 'components/StripEntities'
+import Description from 'components/Description'
 
 import * as SubscriptionActions from 'actions/Subscriptions'
 import * as PersonalizationActions from 'actions/Personalization'
@@ -63,7 +64,7 @@ class Subscription extends Component {
                                     }
                                 </li>
                             </ul>
-                            <div className="summary">{this.props.object.description}</div>
+                            <Description>{this.props.object.description}</Description>
                         </div>
                     </div>
                 </li>
