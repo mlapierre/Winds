@@ -1,5 +1,5 @@
 module.exports.sentry = {
-    active: true,
+    active: false,
     dsn: process.env.SENTRY_DSN,
     level: 'error',
 };
