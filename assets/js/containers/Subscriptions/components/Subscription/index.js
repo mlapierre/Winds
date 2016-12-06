@@ -41,6 +41,7 @@ class Subscription extends Component {
                                 </li>
                                 <li>
                                     <a
+                                        className="title"
                                         href={this.props.articleUrl}
                                         target="_blank"
                                         title={this.props.title}
@@ -74,5 +75,7 @@ class Subscription extends Component {
     }
 
 }
+
+require('./styles.scss')
 
 export default Subscription
