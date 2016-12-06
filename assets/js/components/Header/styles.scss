@@ -49,6 +49,10 @@
     margin-top: 15px;
 }
 
+.navbar .dropdown-menu {
+    border: 0;
+}
+
 .navbar-left {
     float: left;
 }
@@ -69,7 +73,8 @@
     margin-right: 18px;
 }
 
-.navbar-right > a {
+.navbar-right > a,
+.navbar-right > .dropdown {
     float: left;
     clear: right;
     margin-right: 22px;

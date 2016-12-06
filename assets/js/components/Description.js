@@ -6,13 +6,18 @@ var Entities = require('html-entities').AllHtmlEntities,
     HtmlToReactParser = require('html-to-react').Parser,
     htmlToReactParser = new HtmlToReactParser()
 
-const Content = html => {
-	htmlToReactParser.parse(html)
+const safelyRenderHtml = html => {
+	return htmlToReactParser.parse(
+		'<div className=\"article-content-wrapper\">' + 
+			entities.decode(html) + 
+		'</div>')
 }
-//React.renderToStaticMarkup(htmlToReactParser.parse(props.children))
 
-export default props => (
-	<div className="description">
-		<Content html={entities.decode(props.children)} />
-	</div>
-)
+export default props => {
+	if (!props.children) return null
+	return (
+		<div className="description">
+	    	{safelyRenderHtml(props.children)}
+	    </div>			
+	)
+}

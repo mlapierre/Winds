@@ -84,6 +84,14 @@ class Header extends Component {
                         </div>
                         <div className="col-lg-4 col-md-4 col-sm-4 ">
                             <div className="navbar-right">
+                                <span role="presentation" className="dropdown">
+                                    <a href="#" className="fa fa-bars" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" />
+                                    <ul className="dropdown-menu">
+                                        <li>
+                                            <a href="#">One</a>
+                                        </li>
+                                    </ul>
+                                </span>                                
                                 <a href="#" className="icon hidden-xs-down" onClick={this.handlePersonalizationClick}>
                                     <svg width="14px" height="16px" viewBox="1085 22 14 16" className="personalization-icon">
                                         <g id="personalization-icon" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd" transform="translate(1085.000000, 22.000000)">

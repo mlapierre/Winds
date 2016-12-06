@@ -1,0 +1,22 @@
+version: '2'
+services:
+  winds-app:
+    build: ./app
+    image: winds-app
+    ports:
+     - "1337:1337"
+    volumes:
+     - ./app:/home/app
+    links:
+     - winds-db
+  winds-db:
+    build: ./db
+    image: winds-db
+    ports:
+     - "27017:27017"
+    volumes:
+     - ./db:/code
+     - winds-data:/data/db
+
+volumes:
+  winds-data:

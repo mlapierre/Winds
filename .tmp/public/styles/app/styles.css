@@ -224,6 +224,9 @@ form {
 .navbar-content {
   margin-top: 15px; }
 
+.navbar .dropdown-menu {
+  border: 0; }
+
 .navbar-left {
   float: left; }
 
@@ -238,7 +241,8 @@ form {
   float: right;
   margin-right: 18px; }
 
-.navbar-right > a {
+.navbar-right > a,
+.navbar-right > .dropdown {
   float: left;
   clear: right;
   margin-right: 22px; }
@@ -1168,6 +1172,15 @@ body {
       color: red !important;
       border: 1px solid red !important;
       outline: none !important; }
+.description {
+  background-color: #fff;
+  padding: 10px 20px;
+  margin: 8px 0 0 -5px; }
+  .description h2 {
+    font-size: 1.2rem; }
+
+.title {
+  font-size: 1.2rem; }
 .material-icons, .subscriptions .mark-all-read a::before {
   font-family: 'Material Icons';
   font-weight: normal;
