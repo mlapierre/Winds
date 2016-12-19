@@ -162,11 +162,12 @@ module.exports = {
     facebookAuth: function(req, res) {
 
         passport.authenticate('facebook', {
-            failureRedirect: '/app/getting-started?auth=false'
+            failureRedirect: '/app/getting-started?auth=false',
+            scope: ['email'],
         }, function(err, user, info) {
 
             if (err || !user) {
-                return res.badRequest(err)
+                return res.redirect('/app-getting-started?auth=failed')
             }
 
             req.logIn(user, function(err) {
@@ -188,7 +189,7 @@ module.exports = {
                     url += `&jwt=${data.token}`
                     url += `&email=${data.email}`
 
-                res.redirect(url)
+                return res.redirect(url)
 
             })
 

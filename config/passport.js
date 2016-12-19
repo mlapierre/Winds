@@ -10,7 +10,7 @@ let config = {
 }
 
 module.exports = {
-    passport: config
+    passport: config,
 }
 
 passport.serializeUser(function(user, done) {
@@ -62,7 +62,7 @@ opts.issuer      = config.issuer
 passport.use(new JwtStrategy(opts, function(jwt_payload, done) {
 
     Users.findOne({ id: jwt_payload.sub }, function(err, user) {
-        
+
         if (err) {
             return done(err, false)
         }
@@ -94,8 +94,10 @@ passport.use(new FacebookStrategy({
         if (err || !user) {
             if (!_.isEmpty(sails.sentry)) {
                 sails.sentry.captureMessage(err)
+                return done(err)
             } else {
                 sails.log.warn(err)
+                return done(err)
             }
         }
 

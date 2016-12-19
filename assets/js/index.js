@@ -4,11 +4,14 @@ import { Provider } from 'react-redux'
 import { syncHistoryWithStore, routerReducer } from 'react-router-redux'
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux'
 import { browserHistory, Router, Route, IndexRoute, IndexRedirect } from 'react-router'
+
 import thunk from 'redux-thunk'
 
 import syncMiddleware from './middleware/Sync'
 
 import * as reducers from './reducers'
+
+const URLSearchParams = require('url-search-params')
 
 export const store = createStore(
     combineReducers({
@@ -29,6 +32,7 @@ export const store = createStore(
 )
 
 import * as AppActions from 'actions/App'
+import * as TopicActions from 'actions/Topics'
 
 const history = syncHistoryWithStore(browserHistory, store);
 
@@ -51,7 +55,15 @@ const loading = store.dispatch(AppActions.init())
                 localStorage.setItem('token', qs.get('jwt'))
                 localStorage.setItem('email', qs.get('email'))
 
-                window.location.href = '/app/personalization-feed'
+                if (localStorage.getItem('topics')) {
+                    store.dispatch(TopicActions.follow(
+                        localStorage.getItem('topics').split(',')
+                    ))
+                    localStorage.removeItem('topics')
+                    window.location.reload()
+                } else {
+                    window.location.reload()
+                }
 
             } else {
 
